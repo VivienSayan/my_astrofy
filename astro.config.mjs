@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: 'https://astrofy-template.netlify.app',
   output: 'static',
   integrations: [mdx(), sitemap(), tailwind()],
 });
