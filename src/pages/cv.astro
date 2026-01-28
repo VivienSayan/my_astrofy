@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profil général</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Basé à Toulouse (France), je suis issu d’une formation scientifique orientée vers l’ingénierie des systèmes robotiques et des systèmes automatiques. Titulaire d’un parcours académique de niveau bac+5, je suis actuellement engagé dans la préparation d’un doctorat. Mon profil s’inscrit dans un cadre de recherche et de développement avancé, avec une expertise centrée sur la modélisation, l'estimation et l'asservissement de systèmes complexes.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Etudes</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Master Sciences pour l'ingénieur, Robotique et Automatique"
+      subtitle="2020 à 2022, à Sorbonne Université (campus UPMC), Paris, France"
+    />
+    <a class="btn btn-outline ml-5" href="http://localhost:4321/formations/diplme-de-master" target="_blank"> Pour en savoir + sur mon Master</a>
+    <TimeLineElement
+      title="Licence Mécanique"
+      subtitle="2017 à 2020, à Sorbonne Université (campus UPMC), Paris, France"
+    />
+    <a class="btn btn-outline ml-5" href="http://localhost:4321/formations/diplme-de-licence" target="_blank"> Pour en savoir + sur ma Licence</a>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experiences</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Doctorant"
+      subtitle="Du 1er novembre 2022 au 31 octobre 2025, à l'ONERA (Office Nationale des Etudes et de la Recherche Aérospatiale), Toulouse, France"
+    >
+      <b>Résumé</b>: Développement d'un projet de thèse de 3 ans portant sur l'estimation d'état pour la commande de systèmes robotiques.
+    </TimeLineElement>
+    <a class="btn  btn-outline ml-5" href="https://theses.fr/s353502" target="_blank"> Pour en savoir + sur ma thèse</a>
+    <a href="https://hal.science/search/index?q=vivien+pravong" target="_blank" class="btn"> Mes publications scientifiques</a>
+    <TimeLineElement
+      title="Stage de fin d'étude"
+      subtitle="Du 1er février 2022 à 31 juillet 2022, au Commissariat à l'Energie Atomique (CEA), Saclay, France"
+    >
+      <b>Résumé</b>: S'inscrivant dans un contexte d'inspection de canalisations de centrales nucléaires, l'objectif du stage était d'asservir un robot à roues dans une canalisation cylindrique par la mise en place de lois de commandes.
+    </TimeLineElement>
+    <a class="btn btn-outline ml-5" href="http://localhost:4321/formations/stage-de-fin-dtude" target="_blank"> Pour en savoir + sur mon stage</a>
+  </div>
+
+<!--
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="#" target="_blank"> Certification Name (with link)</a>
+    </li>
+    <li>
+      <a href="#" target="_blank"> Certification Name (with link)</a>
+    </li>
+  </ul>
+-->
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-1 columns-2 mx-6">
+    <li>Matlab (calcul numérique, visualisation et analyse de données, automatisation)</li>
+    <li>Python (scripts, visualisation et analyse de données, automatisation)</li>
+    <li>C++ (connaissances de base)</li>
+    <li>Git</li>
+    <li>Environnement Linux (commandes de base)</li>
+    <li>Latex/Overleaf (rédaction de rapports, manuscrits, publications scientifiques, etc.)</li>
+    <li>Recherche scientifique (lecture/écriture et compréhension de documents techniques)</li>
+  </ul>
+</BaseLayout>

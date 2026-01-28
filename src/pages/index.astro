@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <!--<div class="text-xl py-1">Bonjour, je m'appelle</div>-->
+    <div class="text-5xl font-bold">Vivien Pravong</div>
+    <div class="text-3xl py-3 font-bold">En préparation d'une thèse en robotique</div>
+    <div class="py-2">
+      <text class="text-lg">
+        <b> Biographie: </b>
+          <br> Né le 9 Mai 1999 (actuellement 26 ans) à Tremblay-en-France, j'ai grandis à Villepinte (en banlieue parisienne). Je suis de nationalité française, d'origine laotienne.
+        
+        <br><br> <b>Situation actuelle:</b> <br> 
+        Je vis à Toulouse (France). Je suis en 4ème année de thèse dans le domaine Robotique et Automatique, j'ai effectué mon doctorat à l'ONERA (Office Nationale des Etudes et de la Recherche Aérospatiale), et à l'ENAC (Ecole Nationale de l'Aviation Civile).
+        <br> 
+
+        
+        <br> <b>Sujet de thèse</b>: 
+        <br>
+        Estimation d'état sur groupes de Lie pour les systèmes robotiques sous incertitudes.
+
+        <div class="mt-8">
+          <a href="https://hal.science/search/index?q=vivien+pravong" target="_blank" class="btn btn-outline ml-5"> Mes publications scientifiques</a>
+          <a class="btn" href="https://theses.fr/s353502" target="_blank"> Mon profil sur theses.fr</a>
+        </div>
+        
+<!--        <br> <br> <b> Formations:</b> <br> 
+        Je suis issu d'une <b>formation scientifique</b> à <b>Sorbonne Université</b> (Ex-UPMC) dans le 6e arrondissement de Paris, je dispose d'un <b>Master de Sciences pour l'Ingénieur, parcours Robotique et Automatique</b> et d'une <b>Licence de Mécanique</b>.
+
+        <div class="mt-8">
+          <a class="btn btn-outline ml-5" href="http://localhost:4321/formations/diplme-de-master" target="_blank"> Pour en savoir plus sur mon Master</a>
+          <a class="btn" href="http://localhost:4321/formations/diplme-de-licence" target="_blank"> Pour en savoir plus sur ma Licence</a>
+        </div>
+-->        
+        <br> <b>Centres d'intérêts scientifiques:</b>
+        <br> • Robotique: modélisation des systèmes dynamiques, machine learning, lois de commande, traitement de l'information, estimation d'état.
+        <br> • Physique (culture scientifique générale, mais non spécialiste): mécanique classique, relativité générale, mécanique quantique.
+        <br> • Epistémologie: Raisonnement Bayésien.
+
+
+        <br> <br> <b>Autres centres d'intérêts:</b>
+        <br> • Basket (pratique occasionelle, loisir)
+      </text>
+    </div>
+
+  </div>
+
+
+
+
+
+<!--
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  </div>
+
+  <HorizontalCard
+    title="Demo Project 1"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="NEW"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 2"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 3"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="FOSS"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+</BaseLayout>
+-->
