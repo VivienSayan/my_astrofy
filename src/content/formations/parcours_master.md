@@ -15,9 +15,9 @@ De Septembre 2020 à Septembre 2022
 Fraîchement diplômé d'une [Licence de Mécanique](http://localhost:4321/formations/diplme-de-licence) dans la même faculté, ce Master s'inscrivait dans la continuité des enseignements de Licence, car orienté vers la **modélisation des systèmes dynamiques pour des applications robotiques**.
 
 ### Résumé des deux ans
-À l'époque, nous devions choisir entre deux parcours: SAR et ISI (j'ai choisis SAR). Le parcours SAR (Systèmes Avancés Robotiques) mit principalement l'accent sur les aspects de **modélisation** des systèmes robotiques, de **lois de commande**, d'**estimation** et de **programmation** des méthodes lors de divers travaux pratiques. 
+Le parcours SAR (Systèmes Avancés Robotiques) mît l'accent sur les aspects de **modélisation** des systèmes robotiques, de **lois de commande**, d'**estimation** et de **programmation** des méthodes lors de divers travaux pratiques. 
 
-Le principal fil conducteur de cette formation a été au travers de cas d'écoles, tels que les **bras manipulateurs** (séries et parallèles) et les **robots mobiles** (robots à roues et mini-drônes). 
+Le principal fil conducteur de cette formation a été au travers d'études de cas d'écoles, tels que les **bras manipulateurs** (séries et parallèles) et les **robots mobiles** (robots à roues et mini-drônes). 
 
 Ce faisant, nous avons abordé des notions telles que la **modélisation géométrique et cinématique**, tant directe qu’inverse, la convention de Denavit et Hartenberg, ainsi que les contraintes holonomes et non holonomes. Nous avons également étudié la modélisation cinématique des robots à roues, notamment les modèles de type unicycle et à direction différentielle, ainsi que la **modélisation dynamique** des drones. 
 
