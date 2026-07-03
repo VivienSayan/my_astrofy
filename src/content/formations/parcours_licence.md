@@ -18,7 +18,7 @@ Je suis entré en Licence en Septembre 2017 à **Sorbonne Université**. Il s'ag
 
 La 1ère année correspondait à une année "portail d'entrée" dont le but était ensuite de s'orienter en 2ème année vers la Licence souhaitée. Je suis entré par le portail **Physique-Chimie-Géoscience-Ingénierie** (PCGI). Ce n'est quà l'issue de cette première année que j'ai décidé de m'orienter vers une Licence Mécanique, dans laquelle j'ai effectué les deux années restantes. 
 
-Les enseignements en 2ème et 3ème année allaient de la **mécanique des solides indéformables** à la mécanique des **milieux continus** (MMC), en passant par la **thermodynamique** et la **mécanique des fluides**. Ces sujets étaient les principales notions vues durant les deux ans. En parallèle, il y a avait bien entendu des UEs dédiées entièrement aux **mathématiques** (analyse, calculus, algèbre linéaire). Des UEs de **programmation** pour le calcul numérique faisait aussi partie des enseignements, bien que cet aspect était plutôt négligé par rapport aux enseignements théoriques.
+Les enseignements en 2ème et 3ème année allaient de la **mécanique des solides indéformables** à la mécanique des **milieux continus** (MMC), en passant par la **thermodynamique** et la **mécanique des fluides**. Ces sujets étaient les principales notions vues durant les deux ans. En parallèle, il y a avait bien entendu des UEs dédiées entièrement aux **mathématiques** (calcul différentiel, algèbre linéaire, trigonométrie). Des UEs de **programmation** (matlab et fortran) pour le calcul numérique faisait aussi partie des enseignements.
 
 
 ### Détails 1ère année
