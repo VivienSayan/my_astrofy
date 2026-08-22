@@ -19,7 +19,7 @@ Le parcours SAR (Systèmes Avancés Robotiques) mît l'accent sur les aspects de
 
 Le principal fil conducteur de cette formation a été au travers d'études de cas d'écoles, tels que les **bras manipulateurs** (séries et parallèles) et les **robots mobiles** (robots à roues et mini-drônes). 
 
-Ce faisant, nous avons abordé des notions telles que la **modélisation géométrique et cinématique**, tant directe qu’inverse, la convention de Denavit et Hartenberg, ainsi que les contraintes holonomes et non holonomes. Nous avons également étudié la modélisation cinématique des robots à roues, notamment les modèles de type unicycle et à direction différentielle, ainsi que la **modélisation dynamique** des drones. 
+Ce faisant, nous avons abordé des notions telles que la **modélisation géométrique et cinématique**, tant directe qu’inverse, la convention de Denavit-Hartenberg, ainsi que les contraintes holonomes et non holonomes. Nous avons également étudié la modélisation cinématique des robots à roues, notamment les modèles de type unicycle et à direction différentielle, ainsi que la **modélisation dynamique** des drones. 
 
 En ce qui concerne l’**asservissement**, nous avons survolé les techniques classiques de commande dans le cadre linéaire, telles que le retour d’état, la commande linéaire quadratique, ainsi que les conditions de stabilité et de convergence. Cette partie a été abordée pour moitié sous l’angle de la représentation fréquentielle, et pour l’autre moitié à travers la représentation d’état. Quelques méthodes de commande non linéaire ont également été étudiées, notamment la linéarisation, la synthèse par Lyapunov et la commande H infinie. 
 
@@ -68,7 +68,9 @@ Le dernier semestre fût entièrement dédié au stage de fin d'étude.
 - IA pour la robotique
 
 #### Dernier semestre (S4):
-**Stage de fin d'éude au CEA** (Commissariat à l'Energie Atomique) sur le plateau de Saclay. **Sujet**: *Développement de lois de commande pour la navigation d'un robot de type skid-steering à l'intérieur d'une canalisation dans un contexte d'inspection nucléaire*.
+**Stage de fin d'étude au CEA** (Commissariat à l'Energie Atomique) sur le plateau de Saclay. 
+
+**Sujet**: *"Développement de lois de commande d'un robot 4-roues différentiel à l'intérieur d'une canalisation cylindrique pour contexte d'inspection nucléaire"*.
 
 Pour en savoir + sur le stage de fin d'étude, cliquez sur [ce lien](http://localhost:4321/formations/stage-de-fin-dtude)
 
