@@ -7,7 +7,7 @@ heroImage: "/freenove_4WD_car_arduino.jpeg"
 tags: ["modélisation","robotique"]
 ---
 
-En robotique, on aime bien caractériser le comportement d'un système dynamique par des équations -- pour la plupart issus des lois de la physique -- afin d'en tirer une connaissance formelle de l'état du système à un instant futur $t+\delta t$, étant donné la connaissance de son état à un instant $t$ et d'entrées connues sur celui-ci. De manière générale, on rassemble les $n$ variables d'état du système dans un vecteur d'états, noté $\mathbf{x} \in \mathbb{R}^n$, dont chaque variable caractérise une quantité d'intérêt que l'on souhaite suivre au cours du temps et qui évolue selon une certaine dynamique lorsqu'on applique $m$ variables d'entrée, rassemblées dans un vecteur noté $\mathbf{u} \in \mathbb{R}^m$. Pour calculer la position d'un robot dans un repère, on commence souvent par décrire l'évolution de l'état du système par une équations des vitesses (équations cinématiques) de la forme suivante:
+En robotique, on aime bien caractériser le comportement d'un système dynamique par des équations -- pour la plupart issus des lois de la physique -- afin d'en tirer une connaissance formelle de l'état du système à un instant futur $t+\delta t$ étant donné la connaissance de son état à un instant $t$ et d'entrées connues sur celui-ci. De manière générale, on rassemble les $n$ variables d'état du système dans un vecteur d'états, noté $\mathbf{x} \in \mathbb{R}^n$, dont chaque variable caractérise une quantité d'intérêt que l'on souhaite suivre au cours du temps et qui évolue selon une certaine dynamique lorsqu'on applique $m$ variables en entrée du système. Ces variables sont rassemblées dans un vecteur noté $\mathbf{u} \in \mathbb{R}^m$. Pour calculer la position d'un robot dans un repère, on commence souvent par décrire l'évolution de l'état du système par une équations des vitesses (équations cinématiques) de la forme suivante:
 
 $\dot{\mathbf{x}}(t) = \mathbf{f}(\mathbf{x}(t), \mathbf{u}(t))$
 
@@ -57,9 +57,9 @@ où $\mathbf{R}(\theta)$ est la matrice de rotation (d'un angle $\theta$ autour 
 
 ## Expression analytique des vitesses dans le repère corps
 
-En pratique, nous ne disposons par des entrées $v_x$, $v_y$ et $\omega$ directement. En effet, on les calcule indirectement à partir de mesures odométriques qui nous fournissent plutôt les distances parcourue par chaque roue. On se propose ici d'expliquer comment nous en déduisons les quantités $v_x$, $v_y$ et $\omega$.
+En pratique, nous ne disposons par des entrées $v_x$, $v_y$ et $\omega$ directement. En effet, on les calcule plutôt indirectement à partir de mesures odométriques qui nous fournissent la distance parcourue par chaque roue. On se propose de voir comment nous en déduisons les quantités $v_x$, $v_y$ et $\omega$.
 
-Pour ce qui va suivre, on considère un robot mobile ayant une roue de chaque côté (le raisonnement et les équations seront les mêmes que pour un robot mobile doté de deux roues parallèles de chaque côté). Chaque roue sont de rayon $r$ et séparée d'une distance $D$. On suppose aussi un scénario idéal tel que les contraintes cinématiques impliquent strictement un mouvement d'avant-arrière et n'autorisent pas de mouvements latéraux ni de glissement. Ainsi, on peut d'ores et déjà conclure que la vitesse latérale dans le repère corps est nulle:
+Pour ce qui va suivre, on considère un robot mobile ayant une roue de chaque côté (le raisonnement et les équations seront les mêmes que pour un robot mobile doté de deux roues parallèles de chaque côté). Les roues sont de rayon $r$ et séparées d'une distance $D$. On suppose aussi un scénario idéal tel que les contraintes cinématiques impliquent strictement un mouvement d'avant-arrière et n'autorisent pas de mouvements latéraux ni de glissement. Ainsi, on peut d'ores et déjà conclure que la vitesse latérale dans le repère corps est nulle:
 
 $\dot{y}_{\mathcal{R}} = v_y = 0$
 
@@ -84,7 +84,7 @@ Ainsi, la vitesse $v_x$ parcourue par le centre du robot est la moyenne de la vi
 
 $v_x = \frac{r \dot{\phi}_g + r \dot{\phi}_d}{2}$
 
-Nous devons maintenant calculer la vitesse de rotation du robot autour de son axe $e_z$. Cette rotation peut être visualisée en imaginant les roues du robots tourner dans des sens opposées. Prenons chaque roue indépendemment l'une de l'autre, en supposant la roue gauche non actionnée, et la roue droite tournant vers l'avant, nous observons une rotation du corps dans le sens trigonométrique (anti-horaire). En imaginant que la roue droite réalise un arc de cercle de rayon $D$ dont le point d'origine est le centre de la roue gauche, et que cet arc de cercle possède un angle $\alpha_d$, nous pouvons écrire que la distance de cet arc de cercle est égale à la distance parcourue par la roue droite ayant avancé de $\phi_d$ radian (Fig. 4). Ainsi, on a:
+Nous devons maintenant calculer la vitesse de rotation du robot autour de son axe $e_z$. Cette rotation peut être visualisée en imaginant les roues du robots tourner dans des sens opposées. Prenons chaque roue indépendamment l'une de l'autre: en supposant la roue gauche non actionnée, et la roue droite actionnée vers l'avant, nous observons une rotation du corps dans le sens trigonométrique (anti-horaire). En imaginant (vu de dessus) que la roue droite réalise un arc de cercle de rayon $D$ dont le point d'origine coïncide avec le centre de la roue gauche, et que cet arc de cercle possède un angle $\alpha_d$, nous pouvons écrire que la distance de cet arc de cercle est égale à la distance parcourue par la roue droite ayant avancé de $\phi_d$ radian (Fig. 4). Ainsi, on a:
 
 $D \alpha_d = r \phi_d$
 
@@ -97,7 +97,7 @@ En prenant la dérivée de chaque côté pour passer dans l'espace des vitesses,
 
 $\dot{\alpha}_d = \frac{r \dot{\phi}_d}{D}$
 
-Enfin, on ajoute la rotation inverse (celle de la roue gauche tournant vers l'arrière et la roue droite non actionnée), nous obtenons:
+Enfin, on ajoute la rotation inverse (celle de la roue gauche actionnée vers l'arrière et la roue droite non actionnée), nous obtenons:
 
 $\omega = \frac{r \dot{\phi}_d - r \dot{\phi}_g}{D}$
 
@@ -127,7 +127,7 @@ $v_d = R_d  \omega = (R+\frac{D}{2}) \omega = (R+\frac{D}{2}) \frac{v_x}{R} = v_
 
 On rappel que $v_g = r \dot{\phi}_g$ et $v_d = r \dot{\phi}_d$
 
-Il nous faut inverser ce système d'équations de sorte à obtenir $v_x$ en fonction de $\dot{\phi}_g$ et $\dot{\phi}_d$, pour en déduire par la suite $\omega$ selon $\frac{v_x}{R}$. Voici ci-dessous la démonstration:
+Il nous faut inverser ce système d'équations de sorte à obtenir $v_x$ en fonction de $\dot{\phi}_g$ et $\dot{\phi}_d$, pour en déduire par la suite $\omega$ d'après $\frac{v_x}{R}$. Ci-dessous la démonstration:
 
 $ v_x = \frac{v_d}{1+\frac{D}{2R}} = \frac{v_g}{1-\frac{D}{2R}} $
 
