@@ -1,6 +1,24 @@
+@import 'katex/dist/katex.min.css';
+
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
 body {
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Times new roman', sans-serif;
+}
+
+figure {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+figure img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
 }

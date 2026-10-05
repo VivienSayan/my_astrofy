@@ -10,11 +10,19 @@ git push
 
 Pour changer la police -> aller dans le fichier src/styles/global.css
 
-Pour les icônes en bas à gauche -> aller dans src puis components et ouvrir sidebarfooter
-
 Pour la page principale -> aller dans src puis pages
+
+Pour modifier le contenu d'introduction -> src/pages/index.astro
 
 Pour les formations -> aller dans src -> content -> formations
 
 Pour modifier le CV -> aller dans src puis pages
+
+Pour modifier la barre latérale -> src/components/SideBarMenu.astro
+
+Pour les icônes de la barre latérale -> src/components /sidebarfooter.astro
+
+Crédit à Manuel Ernesto -> src/components/Footer.astro
+
+
 
