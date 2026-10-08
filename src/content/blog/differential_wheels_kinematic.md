@@ -2,7 +2,7 @@
 title: "Cinématique d'un robot différentiel"
 description: "Modélisation des mouvements d'un robot différentiel avec hypothèse de roulement sans glissement."
 pubDate: "Oct 01 2026"
-heroImage: "/freenove_4WD_car_arduino.jpeg"
+heroImage: "/diff_drive_example.png"
 # badge: "Demo badge"
 tags: ["modélisation","robotique"]
 ---
@@ -155,8 +155,6 @@ Pour $\omega$, on injecte l'expression de $R$ et $v_x$ dans $\omega = \frac{v_x}
 
 $ \omega = \frac{\frac{v_d + v_g}{2}}{\frac{D}{2}\frac{v_d+v_g}{v_d-v_g}} = \frac{v_d - v_g}{D} = \frac{r \dot{\phi}_d - r \dot{\phi}_g}{D}$
 
-### --
-
 En rassemblant le tout, nous obtenons finalement:
 
 $
@@ -164,3 +162,22 @@ $
 \underbrace{\begin{pmatrix} \cos(\theta) & -\sin(\theta) & 0 \\ \sin(\theta) & \cos(\theta) & 0 \\ 0 & 0 & 1 \end{pmatrix}}_{\mathbf{R}(\theta)}
 \underbrace{\begin{pmatrix} \frac{r \dot{\phi}_g + r \dot{\phi}_d}{2} \\ 0 \\ \frac{r \dot{\phi}_d - r \dot{\phi}_g}{D} \end{pmatrix}}_{\mathbf{u}} = \mathbf{f}(\mathbf{x}, \mathbf{u})
 $
+
+## Cinématique inverse
+
+Nous pouvons inverser la cinématique de sorte à calculer les vitesses locales $\dot{\mathbf{x}}_{\mathcal{R}} = [v_x, v_y, \omega]^\top$ étant donné des vitesses inertielles désirées $\dot{\mathbf{x}} = \dot{\mathbf{x}}_{\mathcal{I}} = [\dot{x}, \dot{y}, \dot{\theta}]^\top$. Il suffit de multiplier chaque côté du modèle cinématique directe par l'inverse de la matrice $\mathbf{R}(\theta)$:
+
+$\mathbf{R}^{-1}(\theta) \dot{\mathbf{x}}_{\mathcal{I}} = \mathbf{R}^{-1}(\theta) \mathbf{R}(\theta) \dot{\mathbf{x}}_{\mathcal{R}}$
+
+$\Rightarrow 
+\underbrace{\begin{pmatrix} v_x \\ v_y \\ \theta \end{pmatrix}}_{\dot{\mathbf{x}}_{\mathcal{R}}} = \underbrace{\begin{bmatrix} \cos(\theta) & \sin(\theta) & 0 \\ -\sin(\theta) & \cos(\theta) & 0 \\ 0 &0& 1 \end{bmatrix}}_{\mathbf{R}^{-1}(\theta)} \underbrace{\begin{pmatrix} \dot{x} \\ \dot{y} \\ \dot{\theta} \end{pmatrix}}_{\dot{\mathbf{x}}_\mathcal{I}}$
+
+Cela signifie devoir connaître à chaque instant l'angle $\theta$ du corps dans le repère inertiel.
+
+Enfin, on peut aussi obtenir les vitesses de rotation souhaitées des roues gauche et droite en donnant comme indication la vitesse linéaire désirée $v_x$ et la vitesse angulaire désirée $\omega$ en inversant $\mathbf{u}$:
+
+$\dot{\phi}_{g} = \frac{2v_x - \omega D}{2r}$
+
+$\dot{\phi}_{d} = \frac{2v_x + \omega D}{2r}$
+
+Notons que cette approche ne nous permet pas de gérer les situations où $v_y \neq 0$ qui résulterait du calcul de $\dot{\mathbf{x}}_{\mathcal{R}}$ depuis $\dot{\mathbf{x}}_{\mathcal{I}}$. Ces solutions sont simplement ignorées.
