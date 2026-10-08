@@ -7,11 +7,15 @@ heroImage: "/diff_drive_example.png"
 tags: ["modélisation","robotique"]
 ---
 
+## Contexte
+
 En robotique, on aime bien caractériser le comportement d'un système dynamique par des équations -- pour la plupart issus des lois de la physique -- afin d'en tirer une connaissance formelle de l'état du système à un instant futur $t+\delta t$ étant donné la connaissance de son état à un instant $t$ et d'entrées connues sur celui-ci. De manière générale, on rassemble les $n$ variables d'état du système dans un vecteur d'états, noté $\mathbf{x} \in \mathbb{R}^n$, dont chaque variable caractérise une quantité d'intérêt que l'on souhaite suivre au cours du temps et qui évolue selon une certaine dynamique lorsqu'on applique $m$ variables en entrée du système. Ces variables sont rassemblées dans un vecteur noté $\mathbf{u} \in \mathbb{R}^m$. Pour calculer la position d'un robot dans un repère, on commence souvent par décrire l'évolution de l'état du système par une équations des vitesses (équations cinématiques) de la forme suivante:
 
 $\dot{\mathbf{x}}(t) = \mathbf{f}(\mathbf{x}(t), \mathbf{u}(t))$
 
-Ce billet de blog se propose d'établir les équations cinématiques d'un robot différentiel tel qu'aperçu en haut de cette page. Pour cela, on considère un repère inertiel $\mathcal{I} = (O, \mathcal{e}_{x}, \mathcal{e}_{y}, \mathcal{e}_{z})$ (Fig. 1) et on se choisit le système d'états $\mathbf{x} = [x,y,\theta]^\top$ où:
+## Cas du robot différentiel
+
+Ce blog post se propose d'établir les équations cinématiques d'un robot différentiel tel qu'aperçu en haut de cette page. Pour cela, on considère un repère inertiel $\mathcal{I} = (O, \mathcal{e}_{x}, \mathcal{e}_{y}, \mathcal{e}_{z})$ (Fig. 1) et on se choisit le système d'états $\mathbf{x} = [x,y,\theta]^\top$ où:
 - $x$ est la position le long de l'axe horizontal $\mathcal{e}_{x}$
 - $y$ est la position le long de l'axe vertical $\mathcal{e}_{y}$
 - $\theta$ est l'orientation du véhicule autour de l'axe $\mathcal{e}_{z}$ du repère
@@ -180,4 +184,6 @@ $\dot{\phi}_{g} = \frac{2v_x - \omega D}{2r}$
 
 $\dot{\phi}_{d} = \frac{2v_x + \omega D}{2r}$
 
-Notons que cette approche ne nous permet pas de gérer les situations où $v_y \neq 0$ qui résulterait du calcul de $\dot{\mathbf{x}}_{\mathcal{R}}$ depuis $\dot{\mathbf{x}}_{\mathcal{I}}$. Ces solutions sont simplement ignorées.
+Notons que cette approche ne nous permet pas de gérer les situations $v_y \neq 0$ qui résulterait du calcul de $\dot{\mathbf{x}}_{\mathcal{R}}$ depuis $\dot{\mathbf{x}}_{\mathcal{I}}$. Ces solutions sont simplement ignorées.
+
+Dans [ce blog post](http://localhost:4321/blog/robot-diffrentiel-4wd---arduino), je tente d'implémenter ces expressions sur une vraie plateforme à quatre roues.

@@ -165,6 +165,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"projet_4WD_arduino.md": {
+	id: "projet_4WD_arduino.md";
+  slug: "projet_4wd_arduino";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 "formations": {
 "parcours_licence.md": {
