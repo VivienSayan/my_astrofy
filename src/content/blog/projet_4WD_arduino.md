@@ -50,7 +50,7 @@ Cependant, on ne peut pas en dire autant lorsqu’on tente de faire tourner le r
   <source src="/Freenove_4WD_carre_imparfait.mov" type="video/mp4">
 </video>
 
-Ces expériences montrent bien les limites de ce modèle cinématique face aux aléas du réel.
+Ces expériences montrent bien les limites de ce modèle cinématique face aux aléas du réel. Je compte néanmoins l'exploiter dans un premier temps et je verrais plus tard s'il est nécessaire de passer à une modélisation plus complexe.
 
 <!-- <iframe
   src="/Code_Car_Move_and_Turn_modified.pdf"
@@ -59,3 +59,22 @@ Ces expériences montrent bien les limites de ce modèle cinématique face aux a
   style="border: none;"
 >
 </iframe> -->
+
+## Update (12 octobre 2026)
+
+J'ai mis la main sur un capteur d'angle magnétique AS5600 (Fig. 2), et l'ai testé sur un montage Arduino simple (Fig. 3) avec le code [ici présent](/test_module_AS5600.pdf). 
+
+<figure>
+  <img src="/Encodeur_angulaire_magnetique_AS5600.png" />
+  <figcaption>Figure 2 — Module d'encodeur magnétique AS5600 Hailege.</figcaption>
+</figure>
+
+<figure>
+  <img src="/montage_arduino_encodeur_AS5600.png" />
+  <figcaption>Figure 3 — Montage Arduino pour l'encodeur magnétique AS5600.</figcaption>
+</figure>
+
+
+L'idée est d'intégrer ce capteur à la plateforme et implémenter un module de localisation par odométrie. 
+### AFFAIRE À SUIVRE...
+
